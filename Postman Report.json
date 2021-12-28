@@ -1,0 +1,561 @@
+{
+	"id": "8633a427-d163-489a-956b-ac1c4b684858",
+	"name": "Open Weather",
+	"timestamp": "2021-12-26T12:54:34.710Z",
+	"collection_id": "18909911-3f4bcc60-2ade-48ad-a61f-43be8457a3c6",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 240,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a65d92ec-6ade-4d2b-a8db-1b8bb67320a4",
+			"name": "Weather by city name",
+			"time": 30,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 (OK)": true,
+				"Response time test": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 (OK)": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Response time test": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				68,
+				34,
+				31,
+				31,
+				34,
+				30,
+				30,
+				30,
+				54,
+				32,
+				30,
+				30,
+				30,
+				30,
+				30,
+				30,
+				30,
+				30,
+				30,
+				30
+			],
+			"allTests": [
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Response time test": true
+				}
+			]
+		},
+		{
+			"id": "15b1a708-cad5-4fdb-9b81-17e58fa1b38d",
+			"name": "Weather by city ID",
+			"time": 31,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 (OK)": true,
+				"Compare city data": true,
+				"Compare weather conditions": true,
+				"Compare temperature and humidity": true,
+				"Response time test": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 (OK)": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Compare city data": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Compare weather conditions": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Compare temperature and humidity": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Response time test": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				32,
+				31,
+				31,
+				31,
+				30,
+				31,
+				30,
+				30,
+				30,
+				30,
+				30,
+				30,
+				30,
+				31,
+				30,
+				31,
+				31,
+				30,
+				30,
+				31
+			],
+			"allTests": [
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				}
+			]
+		},
+		{
+			"id": "72193bf7-9375-4518-b8c0-b3073d1fa9f0",
+			"name": "Weather by geo coordinates",
+			"time": 30,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200 (OK)": true,
+				"Compare city data": true,
+				"Compare weather conditions": true,
+				"Compare temperature and humidity": true,
+				"Response time test": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200 (OK)": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Compare city data": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Compare weather conditions": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Compare temperature and humidity": {
+					"pass": 20,
+					"fail": 0
+				},
+				"Response time test": {
+					"pass": 20,
+					"fail": 0
+				}
+			},
+			"times": [
+				31,
+				31,
+				31,
+				30,
+				30,
+				30,
+				30,
+				31,
+				30,
+				32,
+				32,
+				31,
+				30,
+				31,
+				30,
+				30,
+				32,
+				30,
+				30,
+				30
+			],
+			"allTests": [
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				},
+				{
+					"Status code is 200 (OK)": true,
+					"Compare city data": true,
+					"Compare weather conditions": true,
+					"Compare temperature and humidity": true,
+					"Response time test": true
+				}
+			]
+		}
+	],
+	"count": 20,
+	"totalTime": 1896,
+	"collection": {
+		"requests": [
+			{
+				"id": "a65d92ec-6ade-4d2b-a8db-1b8bb67320a4",
+				"method": "GET"
+			},
+			{
+				"id": "15b1a708-cad5-4fdb-9b81-17e58fa1b38d",
+				"method": "GET"
+			},
+			{
+				"id": "72193bf7-9375-4518-b8c0-b3073d1fa9f0",
+				"method": "GET"
+			}
+		]
+	}
+}

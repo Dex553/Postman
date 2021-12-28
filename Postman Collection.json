@@ -1,0 +1,425 @@
+{
+	"info": {
+		"_postman_id": "3f4bcc60-2ade-48ad-a61f-43be8457a3c6",
+		"name": "Open Weather",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Weather by city name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 (OK)\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"if (pm.expect(pm.response.code).to.eql(200)){\r",
+							"var jsonData = pm.response.json();\r",
+							"    pm.collectionVariables.set(\"city_name\", jsonData.name);\r",
+							"    pm.collectionVariables.set(\"city_id\", jsonData.id);\r",
+							"    pm.collectionVariables.set(\"lat\", jsonData.coord.lat);\r",
+							"    pm.collectionVariables.set(\"lon\", jsonData.coord.lon);\r",
+							"    pm.collectionVariables.set(\"weather_id\", jsonData.weather[0].id);\r",
+							"    pm.collectionVariables.set(\"weather_main\", jsonData.weather[0].main);\r",
+							"    pm.collectionVariables.set(\"temperature\", jsonData.main.temp);\r",
+							"    pm.collectionVariables.set(\"hum\", jsonData.main.humidity);\r",
+							"    //console.log(jsonData.coord.lat);\r",
+							"}\r",
+							"pm.test(\"Response time test\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"/*\r",
+							"pm.test(\"Get City data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.collectionVariables.set(\"city_name\", jsonData.name);\r",
+							"    pm.collectionVariables.set(\"city_id\", jsonData.id);\r",
+							"    pm.collectionVariables.set(\"lat\", jsonData.coord.lat);\r",
+							"    pm.collectionVariables.set(\"lon\", jsonData.coord.lon);\r",
+							"    //console.log(jsonData.coord.lat);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if city is Vilnius\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(593116);\r",
+							"});\r",
+							"*/\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/weather?q={{name}}&appid={{key}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "{{name}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{key}}"
+						},
+						{
+							"key": "mode",
+							"value": "html",
+							"description": "JSON, xml or html. Format is JSON by default.",
+							"disabled": true
+						},
+						{
+							"key": "units",
+							"value": "metric",
+							"description": "standard, metric, or imperial. Format is standard by default.",
+							"disabled": true
+						},
+						{
+							"key": "lang",
+							"value": "ja",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weather by city ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 (OK)\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare city data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"city_id\"));\r",
+							"    //console.log(pm.collectionVariables.get(\"city_name\"));\r",
+							"    pm.expect(jsonData.name).to.eql(pm.collectionVariables.get(\"city_name\"));\r",
+							"    pm.expect(jsonData.coord.lat).to.eql(pm.collectionVariables.get(\"lat\"));\r",
+							"    pm.expect(jsonData.coord.lon).to.eql(pm.collectionVariables.get(\"lon\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare weather conditions\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.weather[0].id).to.eql(pm.collectionVariables.get(\"weather_id\"));\r",
+							"    pm.expect(jsonData.weather[0].main).to.eql(pm.collectionVariables.get(\"weather_main\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare temperature and humidity\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.main.temp).to.eql(pm.collectionVariables.get(\"temperature\"));\r",
+							"    pm.expect(jsonData.main.humidity).to.eql(pm.collectionVariables.get(\"hum\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time test\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/weather?id={{id}}&appid={{key}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{id}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{key}}"
+						},
+						{
+							"key": "mode",
+							"value": "",
+							"description": "JSON, xml or html. Format is JSON by default.",
+							"disabled": true
+						},
+						{
+							"key": "units",
+							"value": "",
+							"description": "standard, metric, or imperial. Format is standard by default.",
+							"disabled": true
+						},
+						{
+							"key": "lang",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weather by geo coordinates",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 (OK)\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare city data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"city_id\"));\r",
+							"    //console.log(pm.collectionVariables.get(\"city_name\"));\r",
+							"    pm.expect(jsonData.name).to.eql(pm.collectionVariables.get(\"city_name\"));\r",
+							"    pm.expect(jsonData.coord.lat).to.eql(pm.collectionVariables.get(\"lat\"));\r",
+							"    pm.expect(jsonData.coord.lon).to.eql(pm.collectionVariables.get(\"lon\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare weather conditions\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.weather[0].id).to.eql(pm.collectionVariables.get(\"weather_id\"));\r",
+							"    pm.expect(jsonData.weather[0].main).to.eql(pm.collectionVariables.get(\"weather_main\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare temperature and humidity\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.main.temp).to.eql(pm.collectionVariables.get(\"temperature\"));\r",
+							"    pm.expect(jsonData.main.humidity).to.eql(pm.collectionVariables.get(\"hum\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time test\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"postman.setNextRequest(null);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/weather?lon={{lon}}&lat={{lat}}&appid={{key}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lon",
+							"value": "{{lon}}"
+						},
+						{
+							"key": "lat",
+							"value": "{{lat}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{key}}"
+						},
+						{
+							"key": "mode",
+							"value": "html",
+							"description": "JSON, xml or html. Format is JSON by default.",
+							"disabled": true
+						},
+						{
+							"key": "units",
+							"value": "",
+							"description": "standard, metric, or imperial. Format is standard by default.",
+							"disabled": true
+						},
+						{
+							"key": "lang",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Weather by zip code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 (OK)\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare city data\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(pm.collectionVariables.get(\"city_id\"));\r",
+							"    //console.log(pm.collectionVariables.get(\"city_name\"));\r",
+							"    pm.expect(jsonData.name).to.eql(pm.collectionVariables.get(\"city_name\"));\r",
+							"    pm.expect(jsonData.coord.lat).to.eql(pm.collectionVariables.get(\"lat\"));\r",
+							"    pm.expect(jsonData.coord.lon).to.eql(pm.collectionVariables.get(\"lon\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare weather conditions\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.weather[0].id).to.eql(pm.collectionVariables.get(\"weather_id\"));\r",
+							"    pm.expect(jsonData.weather[0].main).to.eql(pm.collectionVariables.get(\"weather_main\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Compare temperature and humidity\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.main.temp).to.eql(pm.collectionVariables.get(\"temperature\"));\r",
+							"    pm.expect(jsonData.main.humidity).to.eql(pm.collectionVariables.get(\"hum\"));\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time test\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/weather?zip=11219&appid={{key}}",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "zip",
+							"value": "11219"
+						},
+						{
+							"key": "appid",
+							"value": "{{key}}"
+						},
+						{
+							"key": "mode",
+							"value": "html",
+							"description": "JSON, xml or html. Format is JSON by default.",
+							"disabled": true
+						},
+						{
+							"key": "units",
+							"value": "",
+							"description": "standard, metric, or imperial. Format is standard by default.",
+							"disabled": true
+						},
+						{
+							"key": "lang",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "api.openweathermap.org/data/2.5"
+		},
+		{
+			"key": "key",
+			"value": "bff17cca69343a526fbbfefe45a6df6d"
+		},
+		{
+			"key": "city_name",
+			"value": "Vilnius"
+		},
+		{
+			"key": "city_id",
+			"value": 593116
+		},
+		{
+			"key": "lat",
+			"value": 54.6892
+		},
+		{
+			"key": "lon",
+			"value": 25.2798
+		},
+		{
+			"key": "weather_id",
+			"value": 804
+		},
+		{
+			"key": "weather_main",
+			"value": "Clouds"
+		},
+		{
+			"key": "temperature",
+			"value": 264.22
+		},
+		{
+			"key": "hum",
+			"value": 92
+		}
+	]
+}
